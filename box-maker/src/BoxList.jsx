@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import './BoxList.css'
 import Box from './Box'
 import BoxForm from './BoxForm'
-import uuid from 'uuid'
 
 class BoxList extends Component{
     //Default Props
@@ -19,6 +18,11 @@ class BoxList extends Component{
             boxes: [...state.boxes , box]
         }))
     }
+    removeBox(id){
+        this.setState(state => ({
+            boxes: this.state.boxes.filter(box => box.key !== id)
+        }))
+    }
     //Render Method
     render(){
 
@@ -29,7 +33,7 @@ class BoxList extends Component{
             <div className="main">
                 <div className="boxesContainer">
                 {this.state.boxes.map(box => (
-                        <Box key={uuid()} width={`${box.width}px`} height={`${box.height}px`} bg_color={`rgb(${box.colorR}, ${box.colorG}, ${box.colorB})`}/>
+                        <Box remove={this.removeBox} key={box.id} width={`${box.width}px`} height={`${box.height}px`} bg_color={`rgb(${box.colorR}, ${box.colorG}, ${box.colorB})`}/>
                 ))}
                 </div>
                 <div className="form">

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './BoxForm.css'
+import uuid from 'uuid'
 
 class BoxForm extends Component {
     //Default Props
@@ -10,7 +11,8 @@ class BoxForm extends Component {
             height: 0,
             colorR: 0,
             colorG: 0,
-            colorB: 0
+            colorB: 0,
+            id: 0
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,6 +20,9 @@ class BoxForm extends Component {
     //Methods
     handleSubmit(evt){
         evt.preventDefault();
+        this.setState({
+            id: uuid()
+        })
         this.props.addBox(this.state)
     }
     handleChange(evt){
@@ -37,7 +42,6 @@ class BoxForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="contentForm">
                     <div className="propsForm">
-                    
                     <div className="form-item">
                     <label htmlFor="width" class="labelBlock">Width: </label>
                     <input name="width" type="number" id="width" value={this.state.width} onChange={this.handleChange}/>
