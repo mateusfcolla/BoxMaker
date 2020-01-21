@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import './BoxList.css'
 import Box from './Box'
 import BoxForm from './BoxForm'
-import $ from 'jquery'
 
 class BoxList extends Component{
     //Default Props
@@ -19,7 +18,6 @@ class BoxList extends Component{
         this.setState(state => ({
             boxes: [...state.boxes , box]
         }))
-        $('.Box').addClass('.addAnimation')
     }
     removeBox(id){
         this.setState(state => ({
