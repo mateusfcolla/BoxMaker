@@ -1,0 +1,21 @@
+.BoxList .main{
+    display: flex;
+}
+
+.BoxList .form{
+    padding: 0;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BoxList h1{
+    font-size: 3em;
+}
+
+.boxesContainer{
+    text-align: start;
+    width: 50vw;
+    white-space: wrap;
+}
