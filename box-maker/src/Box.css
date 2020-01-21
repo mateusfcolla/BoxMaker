@@ -1,0 +1,21 @@
+:root{
+    --time-animation: 0.5s;
+}
+
+.Box{
+    display: inline-block;
+    word-spacing: -1;
+    margin: 0;
+    padding: 0;
+    animation: initialize var(--time-animation);
+    transition: var(--time-animation);
+}
+
+@keyframes initialize{
+    from{
+    transform: scale(0)
+    }
+    to{
+    transform: scale(1)
+    }
+}
