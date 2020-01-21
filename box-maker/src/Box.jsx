@@ -18,7 +18,7 @@ class Box extends Component{
             backgroundColor: this.props.bg_color
         }
         return(
-            <div className="Box" style={boxStyles}></div>
+            <div onClick={this.props.remove} className="Box" style={boxStyles}></div>
         )
     }
 }

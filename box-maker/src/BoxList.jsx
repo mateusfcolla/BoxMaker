@@ -11,6 +11,7 @@ class BoxList extends Component{
             boxes: [{}]
         }
         this.addBox = this.addBox.bind(this)
+        this.removeBox = this.removeBox.bind(this)
     }
     //Methods
     addBox(box){
@@ -20,7 +21,7 @@ class BoxList extends Component{
     }
     removeBox(id){
         this.setState(state => ({
-            boxes: this.state.boxes.filter(box => box.key !== id)
+            boxes: this.state.boxes.filter(box => box.id !== id)
         }))
     }
     //Render Method
@@ -33,11 +34,11 @@ class BoxList extends Component{
             <div className="main">
                 <div className="boxesContainer">
                 {this.state.boxes.map(box => (
-                        <Box remove={this.removeBox} key={box.id} width={`${box.width}px`} height={`${box.height}px`} bg_color={`rgb(${box.colorR}, ${box.colorG}, ${box.colorB})`}/>
+                        <Box remove={() => this.removeBox(box.id)} id={box.id} key={box.id} width={`${box.width}px`} height={`${box.height}px`} bg_color={`rgb(${box.colorR}, ${box.colorG}, ${box.colorB})`}/>
                 ))}
                 </div>
                 <div className="form">
-                    <BoxForm addBox={this.addBox}/>
+                    <BoxForm addBox={this.addBox} key={737} />
                 </div>
             </div>
             </section>
