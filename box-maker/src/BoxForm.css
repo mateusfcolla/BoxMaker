@@ -1,0 +1,92 @@
+.BoxForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.BoxForm .text{
+    margin-bottom: 1em;
+    padding: 0;
+}
+
+.BoxForm .text h1{
+    margin: 0;
+    font-size: 2.7em;
+    font-weight: 650;
+    color: rgba(0, 0 ,0 ,0.9);
+}
+
+.BoxForm .text p{
+    margin: 0;
+    font-size: 1.3em;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.BoxForm form{
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(252, 252, 252);
+    border: 1px solid rgb(63, 63, 63);
+}
+
+.BoxForm form .contentForm .propsForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.BoxForm form .contentForm .colorsForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BoxForm form label{
+    display: block;
+}
+
+.BoxForm input{
+    font-size: 1em;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid rgb(83, 83, 83);
+    margin: 2px;
+    margin-bottom: 1em;
+    width: 30px;
+    height: 30px;
+    padding: 0.3em;
+}
+
+.BoxForm .propsForm input{
+    width: auto;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { display: none }
+input:focus{ outline: 0; }
+
+/* Button Styling */
+
+.BoxForm button{
+    display: block;
+    font-size: 1.1em;
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+    /* Actual Styling */
+    background-color: transparent;
+    border: 0.05em solid rgb(0, 0, 0);
+    padding: 0.5em 1em 0.55em 1em;
+    margin: 2em;
+    border-radius: 0.5em;
+}
+.BoxForm button:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.BoxForm button::selection{background: transparent;}
+.BoxForm button:focus{outline: 0;}
